@@ -2,6 +2,10 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { OpenAI } from 'openai';
+import { AbortController } from 'abort-controller'; // Import AbortController
+import AbortControllerPolyfill from 'abort-controller/polyfill.js';
+
+
 
 dotenv.config();
 
@@ -12,6 +16,12 @@ const openai = new OpenAI({
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Assign the polyfill to AbortController before creating an instance
+AbortController.abortController = AbortControllerPolyfill;
+
+// Now you can use AbortController as intended
+const controller = new AbortController();
 
 app.get('/', async (req, res) => {
   res.status(200).send({
