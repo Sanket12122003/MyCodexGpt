@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { OpenAI } from 'openai';
-import AbortController from 'abort-controller';
 
 dotenv.config();
 
@@ -24,7 +23,7 @@ app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
 
-    // Remove the signal argument.
+    
     const response = await openai.completions.create({
       model: 'gpt-3.5-turbo-instruct',
       prompt: `${prompt}`,
