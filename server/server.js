@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { OpenAI } from 'openai';
+import AbortController from 'abort-controller';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
 
+    // Remove the signal argument.
     const response = await openai.completions.create({
       model: 'gpt-3.5-turbo-instruct',
       prompt: `${prompt}`,
@@ -33,7 +35,7 @@ app.post('/', async (req, res) => {
       presence_penalty: 0,
     });
 
-    // Check if response and response.choices are defined
+    // Check if response and response.choices are defined.
     if (response && response.choices && response.choices.length > 0) {
       const choices = response.choices;
       res.status(200).send({
