@@ -164,7 +164,9 @@ form img {
 
 /* mobile device */
 @media (max-width: 768px) {
-
+  body{
+    height: 90vh;
+  }
   
   #chat_container {
     padding-left: 15px; /* Add some padding on the left for better mobile readability */
