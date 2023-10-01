@@ -164,9 +164,7 @@ form img {
 
 /* mobile device */
 @media (max-width: 768px) {
-  body{
-    height: 80vh;
-  }
+  
   #app{
     height: 85vh;
   }
