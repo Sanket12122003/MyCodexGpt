@@ -176,7 +176,7 @@ form img {
   }
   form {
     flex-direction: row; 
-    margin: 0px auto 35px;/* Change back to row for larger screens */
+    margin: 0px auto 40px;/* Change back to row for larger screens */
   }
 }
 
