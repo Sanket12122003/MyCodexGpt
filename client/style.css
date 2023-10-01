@@ -165,7 +165,10 @@ form img {
 /* mobile device */
 @media (max-width: 768px) {
   body{
-    height: 90vh;
+    height: 80vh;
+  }
+  #app{
+    height: 85vh;
   }
   
   #chat_container {
