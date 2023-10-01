@@ -165,9 +165,7 @@ form img {
 /* mobile device */
 @media (max-width: 768px) {
   
-  #app{
-    height: 85vh;
-  }
+ 
   
   #chat_container {
     padding-left: 15px; /* Add some padding on the left for better mobile readability */
@@ -177,7 +175,8 @@ form img {
     align-items: center; /* Center-align items for mobile */
   }
   form {
-    flex-direction: row; /* Change back to row for larger screens */
+    flex-direction: row; 
+    margin: 0px auto 30px;/* Change back to row for larger screens */
   }
 }
 
